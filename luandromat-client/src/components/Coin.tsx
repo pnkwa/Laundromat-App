@@ -51,13 +51,9 @@ const Coin: React.FC<CoinProps> = ({
           </div>
         }
         HeaderClassName="text-center"
-        buttonLeft="Cancel"
-        buttonRight="Save"
         ButtonName={`Coin ${coinAmount}`}
         ButtonClassName="max-h-32 w-full md:w-64 border-2 border-yellow-500 bg-white/30 
         backdrop-blur-md text-wrap text-yellow-500 text-xl md:text-2xl"
-        buttonLeftClassname="bg-red-500 text-white"
-        buttonRightClassname="bg-blue-500 text-white"
       />
     </div>
   )

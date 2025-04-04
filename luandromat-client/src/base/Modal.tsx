@@ -6,11 +6,7 @@ interface ModalButtonProps {
   className?: string
   ButtonClassName?: string
   HeaderClassName?: string
-  buttonLeftClassname?: string
-  buttonRightClassname?: string
   modalHeader?: string
-  buttonLeft?: string
-  buttonRight?: string
   ButtonName?: string
   modalContentChildren?: React.ReactNode
 }
@@ -19,13 +15,9 @@ export const ModalButton: React.FC<ModalButtonProps> = ({
   className = '',
   ButtonClassName = '',
   HeaderClassName = '',
-  buttonLeftClassname = '',
-  buttonRightClassname = '',
   ButtonName = 'Open Modal',
   modalContentChildren = 'I am a modal',
   modalHeader = 'Modal Heading',
-  buttonLeft = 'Close',
-  buttonRight = 'Save',
 }) => {
   const [modalIsOpen, setIsOpen] = useState(false)
 
@@ -35,10 +27,6 @@ export const ModalButton: React.FC<ModalButtonProps> = ({
 
   function closeModal() {
     setIsOpen(false)
-  }
-
-  function changeContent() {
-    alert('Content will change here!')
   }
 
   return (
@@ -73,18 +61,6 @@ export const ModalButton: React.FC<ModalButtonProps> = ({
           {modalHeader}
         </h2>
         <div className="mt-2 text-gray-600">{modalContentChildren}</div>
-        <div className="mt-4 flex justify-center">
-          <Button
-            text={buttonLeft}
-            onClick={closeModal}
-            className={`py-1 px-3 rounded hover:bg-gray-700 mx-2 ${buttonLeftClassname}`}
-          />
-          <Button
-            text={buttonRight}
-            onClick={changeContent}
-            className={`py-1 px-3 rounded hover:bg-blue-700 mx-2 ${buttonRightClassname}`}
-          />
-        </div>
       </Modal>
     </div>
   )
